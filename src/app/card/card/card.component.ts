@@ -6,7 +6,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CardInfo } from '../cards';
+import { CardInfo, CardTypes } from '../cards';
 
 @Component({
   selector: 'app-card',
@@ -41,11 +41,13 @@ import { CardInfo } from '../cards';
   ],
 })
 export class CardComponent implements OnInit {
-  constructor() {}
+  cardTypes = CardTypes;
 
   @Input() cardInfo: CardInfo | undefined;
 
   @Output() cardClicked = new EventEmitter();
+
+  constructor() {}
 
   ngOnInit(): void {}
 }

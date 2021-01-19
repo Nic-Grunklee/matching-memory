@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CardInfo } from 'src/app/card/cards';
+import { CardInfo, CardTypes } from 'src/app/card/cards';
 
 @Component({
   selector: 'app-game',
@@ -10,6 +10,17 @@ import { CardInfo } from 'src/app/card/cards';
 export class GameComponent implements OnInit {
   //Thanks to https://github.com/thisiszoaib/angular-memory-game for the methods to handle matching and the animations of the cards
   cardNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  cardColors = [
+    'blue',
+    'red',
+    'green',
+    'yellow',
+    'purple',
+    'orange',
+    'white',
+    'black',
+    'pink',
+  ];
 
   cards: CardInfo[] = [];
 
@@ -32,10 +43,11 @@ export class GameComponent implements OnInit {
 
   setupCards(): void {
     this.cards = [];
-    this.cardNumbers.forEach((number) => {
+    this.cardColors.forEach((value) => {
       const cardData: CardInfo = {
-        number,
+        value,
         state: 'default',
+        cardType: CardTypes.COLOR,
       };
 
       this.cards.push({ ...cardData });
@@ -65,8 +77,7 @@ export class GameComponent implements OnInit {
     setTimeout(() => {
       const cardOne = this.flippedCards[0];
       const cardTwo = this.flippedCards[1];
-      const nextState =
-        cardOne.number === cardTwo.number ? 'matched' : 'default';
+      const nextState = cardOne.value === cardTwo.value ? 'matched' : 'default';
       cardOne.state = cardTwo.state = nextState;
 
       this.flippedCards = [];

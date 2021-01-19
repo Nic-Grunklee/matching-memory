@@ -2,7 +2,12 @@
   <div class="back">
     <img src="assets/playing-card.jpg" />
   </div>
-  <div class="front">
-    <span class="number">{{ cardInfo?.number }}</span>
+  <div class="front" *ngIf="cardInfo?.cardType === cardTypes.NUMBER">
+    <span class="number">{{ cardInfo?.value }}</span>
   </div>
+  <div
+    class="front"
+    [ngStyle]="{ 'background-color': cardInfo?.value }"
+    *ngIf="cardInfo?.cardType === cardTypes.COLOR"
+  ></div>
 </div>

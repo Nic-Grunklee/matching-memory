@@ -1,4 +1,11 @@
 export interface CardInfo {
-  number: number;
+  value: any;
   state: 'default' | 'flipped' | 'matched';
+  cardType: CardTypes;
+}
+
+export enum CardTypes {
+  NUMBER,
+  COLOR,
+  SHAPE,
 }
