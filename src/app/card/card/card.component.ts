@@ -34,9 +34,9 @@ import { CardInfo } from '../cards';
           opacity: 0,
         })
       ),
-      transition('default => flipped', [animate('400ms')]),
-      transition('flipped => default', [animate('400ms')]),
-      transition('* => matched', [animate('400ms')]),
+      transition('default => flipped', [animate('150ms')]),
+      transition('flipped => default', [animate('150ms')]),
+      transition('* => matched', [animate('100ms')]),
     ]),
   ],
 })
