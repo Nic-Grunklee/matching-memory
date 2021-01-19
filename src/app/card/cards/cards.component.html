@@ -1,0 +1,7 @@
+<div class="grid p-16">
+  <app-card
+    *ngFor="let card of cards; let i = index"
+    [cardInfo]="card"
+    (cardClicked)="cardClicked.emit(i)"
+  ></app-card>
+</div>
