@@ -1,6 +1,6 @@
 <div class="card" (click)="cardClicked.emit()" [@cardFlip]="cardInfo?.state">
   <div class="back">
-    <img [src]="'https://source.unsplash.com/hyN9aU9Tm-c/200x300'" />
+    <img src="assets/playing-card.jpg" />
   </div>
   <div class="front">
     <span class="number">{{ cardInfo?.number }}</span>
