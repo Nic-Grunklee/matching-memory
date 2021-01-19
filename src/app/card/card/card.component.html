@@ -1,8 +1,8 @@
-<div class="card" (click)="cardClicked.emit()" [@cardFlip]="cardInfo.state">
+<div class="card" (click)="cardClicked.emit()" [@cardFlip]="cardInfo?.state">
   <div class="back">
     <img [src]="'https://source.unsplash.com/hyN9aU9Tm-c/200x300'" />
   </div>
   <div class="front">
-    <span class="number">{{ cardInfo.number }}</span>
+    <span class="number">{{ cardInfo?.number }}</span>
   </div>
 </div>
